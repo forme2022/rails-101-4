@@ -22,6 +22,14 @@ class GroupsController < ApplicationController
       redirect_to groups_path
   end
 
+  def update
+    @group = Group.new(group_params)
+    @group.save
+
+    redirect_to groups_path, notice: "Update Success"
+  end
+
+
   private
 
   def group_params
